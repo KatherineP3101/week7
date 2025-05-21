@@ -7,6 +7,8 @@ public class Solution {
         int[] expectedNums = {0, 1, 2, 3, 4, 0, 0, 0, 0, 0};
         int[] result = removeDuplicates(nums);
 
+        System.out.println("Provided array: " + Arrays.toString(nums));
+        System.out.println("Expected array: " + Arrays.toString(expectedNums));
         System.out.println(Arrays.equals(result, expectedNums));
 
         System.out.println("Exercise 2");
@@ -17,6 +19,7 @@ public class Solution {
 
         System.out.println("Exercise 3");
         String input = "hello world";
+        System.out.println("Input text: " + input);
         Map<Character, Integer> charCountMap = new LinkedHashMap<>();
 
         for (char c : input.toCharArray()) {
