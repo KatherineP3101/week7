@@ -2,36 +2,32 @@ import java.util.*;
 
 public class Solution {
     public static void main(String[] args) {
-        // Exercise 1
+        System.out.println("Exercise 1");
         int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
         int[] expectedNums = {0, 1, 2, 3, 4, 0, 0, 0, 0, 0};
         int[] result = removeDuplicates(nums);
 
         System.out.println(Arrays.equals(result, expectedNums));
 
-        // Exercise 2
+        System.out.println("Exercise 2");
         System.out.println(BracketChecker.isValid("([)]"));
         System.out.println(BracketChecker.isValid("(]"));
         System.out.println(BracketChecker.isValid("()[]{}"));
         System.out.println(BracketChecker.isValid("()"));
 
-        // Exercise 3
+        System.out.println("Exercise 3");
         String input = "hello world";
-        Map<Character, Integer> charCountMap = new HashMap<>();
-
-        for (char c : input.toCharArray()) {
-            if (charCountMap.containsKey(c)) {
-                charCountMap.put(c, charCountMap.get(c) + 1);
-            } else {
-                charCountMap.put(c, 1);
-            }
-        }
+        Map<Character, Integer> charCountMap = new LinkedHashMap<>();
 
         for (char c : input.toCharArray()) {
             charCountMap.merge(c, 1, Integer::sum);
         }
 
-        // Exercise 4
+        charCountMap.forEach((key, value) ->
+                System.out.println(key + " - " + value)
+        );
+
+        System.out.println("Exercise 4");
         LinkedList<Integer> list = new LinkedList<>();
         list.add(1);
         list.add(2);
